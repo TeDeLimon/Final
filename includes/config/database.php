@@ -2,7 +2,12 @@
 
 function conectarDb(): mysqli
 { //Lo cambiamos a forma de objetos en lugar de la de funciones
-    $db = new mysqli('localhost', 'root', 'root', 'proyecto_final');
+    $db = new mysqli(
+        $_ENV['DB_HOST'], 
+        $_ENV['DB_USER'], 
+        $_ENV['DB_PASS'], 
+        $_ENV['DB_BD']
+    );
 
     if (!$db) {
         echo "Error: No se pudo conectar a MySQL.";
