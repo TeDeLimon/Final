@@ -1,0 +1,54 @@
+.formulario {
+    padding:1rem;
+    width:100%;
+    text-align:center;
+    h2 {
+        margin:0;
+        color:black;
+    }
+    label,input {
+        width:100%;
+        padding:1rem;
+        margin:0 auto;
+        display:block;
+    }
+    input {
+        margin:0;
+        border:none;
+        &[placeholder] {
+            text-align:center;
+        }
+        border:1px solid $negro-fondo;
+    }
+    label {
+        text-align:center;
+    }
+    button {
+        margin-top:2rem;
+    }
+    a {
+        appearance: none;
+        padding:1rem;
+        display:block;
+        
+    }
+
+}
+.enlace {
+    text-decoration:none;
+    color:$negro;
+    border:2px solid $amarillo;
+    padding:.5rem;
+    margin-bottom:1rem;
+    display:block;
+}
+.alerta {
+    width:90%;
+    padding:.5rem;
+    background-color:rgb(173, 48, 48);
+    text-transform: uppercase;
+    margin:0 auto;
+}
+.error {
+    color:$blanco;
+}

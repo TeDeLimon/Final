@@ -1,0 +1,38 @@
+.footer {
+    font-weight:700;
+    background-color: $negro;
+    color:$blanco;
+    margin-top:2rem;
+    padding:3rem 1rem 2rem 1rem;
+    text-align:center;
+    margin:0 auto;
+    p {
+        margin-top:2rem;
+        color:$blanco;
+    }
+}
+.contacto {
+    text-transform:uppercase;
+    font-size:1.5rem;
+    .contacto__numero {
+        font-size:2.5rem;
+    }
+}
+.footer__social {
+    margin-top:2rem;
+    display:flex;
+    text-align:center;
+    justify-content: center;
+    gap:3rem;
+    width:100%;
+    a img {
+        filter:invert(100%);
+        max-width:5rem;
+    }
+}
+.footer__developer {
+    .copyright {
+        color:$amarillo-fondo;
+        font-size:1rem;
+    }
+}

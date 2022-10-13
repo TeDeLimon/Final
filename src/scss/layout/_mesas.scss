@@ -1,0 +1,106 @@
+#mesas {
+    width:60%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    @include tablet {
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    }
+    gap:2rem;
+    margin-bottom:3rem;
+    .mesa {
+        background-color:$verde;
+        cursor:pointer;
+        &.reservada {
+            cursor:none;    
+            opacity:0.2;
+            background-color:$rojo;
+        }
+    }
+    .seleccionadoMesa {
+        background-color:$azul;
+        &:hover {
+            background-color:lighten($azul, 20%);
+        }
+    } 
+}
+
+.formulario {
+    input[type=date] {
+        height: 35px;
+        margin: 0 auto;
+        min-width: 30%;
+        max-width:50%;
+        font-family: arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        outline: none;
+        border: 0;
+        border-radius: 3px;
+        background-color:rgb(158, 154, 154);
+        padding: 0 3px;
+        color: $negro;
+        text-align:center;
+      }
+      margin-bottom:4rem;
+}
+.fechas {   
+    display:grid;
+    width:90%;
+    grid-template-columns:1fr 1fr;
+    margin:0 auto;
+    justify-content:center;
+    margin-bottom:4rem;
+    gap:1rem;
+    @include tablet {
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+    .seleccionadoFecha {
+        background-color:$azul;
+        &:hover {
+            background-color:lighten($azul, 20%);
+        }
+    }
+}
+.comensales {
+    display:grid;
+    width:90%;
+    grid-template-columns:1fr 1fr;
+    margin:0 auto;
+    justify-content:center;
+    margin-bottom:4rem;
+    gap:1rem;
+    @include tablet {
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+    .seleccionadoComensal {
+        background-color:$azul;
+        &:hover {
+            background-color:lighten($azul, 20%);
+        }
+    }
+}
+.comentarios {
+    margin:0 auto;
+    text-align:center;
+    margin-bottom:4rem;
+    textarea {
+        resize: none;
+        min-width:30rem;
+        min-height:15rem;
+        border:2px solid $azul;
+        padding:1rem;
+        font-size:2rem;
+        @include tablet {
+            min-width:50rem;
+        }
+        &::placeholder {
+            color:$negro;
+            font-size:2rem;
+        }
+    }
+}
+#sendAPI {
+    margin-bottom:4rem;
+}

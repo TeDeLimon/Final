@@ -1,0 +1,212 @@
+.contenedor-comanda {
+    a {
+        display:flex;
+        justify-content:right;
+        padding:2rem;
+        width:100%;
+        margin-right:2rem;
+        @include desktop {
+            display:none;
+        }
+        img {
+            display:block;
+            height:4rem;
+            width:4rem;
+            text-align:right;
+        }
+    }
+    .seccion-tipos-plato {
+        width:100%;
+        margin:0 auto;
+        margin-bottom:4rem;
+        display:flex;
+        justify-content: space-evenly;
+        gap:.5rem;
+        div {
+            z-index:9999;
+            border:2px solid $negro;
+            padding:2rem;
+            cursor:pointer;
+        }
+        .tipo-plato {
+            z-index:-1;
+            display:block;
+            max-width:10rem;
+        }
+
+    }
+    @include desktop {
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        gap:2rem;
+    }
+}
+
+.seccion-comanda {
+    margin-bottom:4rem;
+    .platos {
+        overflow-y:scroll;
+        width:100%;
+        .plato {
+            width:100%;
+            margin-bottom:2rem;
+            .plato-datos {
+                min-height:37rem;
+                .plato-nombre-precio {
+                    display:flex;
+                    justify-content: space-between;
+                    padding:0 1rem 0 1rem;
+                    .plato-nombre {
+                        font-weight:500;
+                    }
+                    .plato-precio{
+    
+                    }
+                }
+                .plato-descripcion {
+                    text-align:center;
+                }
+            }
+            .acciones {
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:0 2rem 0 2rem;
+                gap:1rem;
+                .acciones-botones {
+                    display:flex;
+                    justify-content:space-evenly;
+                    align-items:center; 
+                    width:65%;
+                    max-width:25rem;
+                    button {
+                        height:8rem;
+                        background-color:$blanco;
+                        border:0;
+                    }
+                    input {
+                        height:8rem;
+                        background-color:$blanco;
+                        color:$negro;
+                        text-align:center;
+                        font-size:2rem;
+                        font-weight:500;
+                        &[type=number] {
+                            -moz-appearance: textfield;
+                            
+                        }
+                    }
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                    }
+                }
+                #boton-comanda {
+                    display:block;
+                    @include boton($verde, block);
+                    color:$blanco;
+                    z-index:3;
+                    font-size:1.5rem;
+                    border-radius:10%;
+                }
+                .plato-cantidad {
+                    color:$blanco;
+                    height:8rem;
+                    max-width:30%;
+                    background-color:$gris;
+                }
+            }
+        }
+        @include tablet {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:1rem;
+        }
+    }
+}
+
+.seccion-carrito {
+    border:2px solid $amarillo;
+    padding:1rem;
+    
+    .carrito-logo {
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+        margin:0 auto;
+        margin-bottom:2rem;
+        padding-bottom:2rem;
+        border-bottom:2px solid $amarillo;
+        text-align:center;
+        img {
+            display:block;
+            max-width:14.4rem;
+        }
+    }
+    .objetos-carrito {
+        .contenedor-plato {
+            display:grid;
+            grid-template-columns: 1fr 2fr;
+            margin-bottom:2rem;
+            border-bottom:2px solid $amarillo;
+            .contenedor-foto {
+                display:flex;
+                align-items: center;
+            }
+            .contenedor-informacion {
+                display: flex;
+                flex-direction: column;
+                align-items:stretch;
+                .nombre-boton-contenedor {
+                    display:flex;
+                    justify-content: space-evenly;
+                    .nombre-plato {
+                        font-size: 2rem;
+                        font-weight:500;
+                        margin:0;
+                    }
+                    button {
+                        display:block;
+                        border:0;
+                        border-radius:10%;
+                        width:3rem;
+                        height:3rem;
+                        background-color:$rojo;
+                        color:$blanco;
+                        cursor:pointer;
+                    }
+                }
+                .cantidad-precio-contenedor {
+                    display:flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+
+    }
+    .finalizar-carrito {
+        .carrito-total {
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            gap:2rem;
+            .total {
+                font-size:3rem;
+                font-weight:400;
+            }
+            .precio-total {
+                font-size:3rem;
+            }
+        }
+    }
+}
+
+
+
+.oculto {
+    display:none !important;
+}
+.tipo-plato-activo {
+    background-color: $azul;
+}

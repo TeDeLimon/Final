@@ -1,0 +1,53 @@
+.nombre-usuario {
+    color:$negro;
+    background-color:$blanco;
+    font-size:1.5rem;
+    margin-bottom:0;
+    span {
+        display:block;
+        font-size:2rem;
+    }
+}
+.reservas {
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+    background-color:$negro;
+    color:$blanco;
+    h1 {
+        margin:0;
+        background-color: $azul;
+    }
+}
+.reserva {
+    padding:1rem;
+    margin:0 auto;
+    list-style-type:none;
+    .cita {
+        color:$azul;
+        font-size:2rem;
+        span{
+            color:$blanco;
+        }
+        .acciones {
+            display:flex;
+            justify-content: space-evenly;
+        }
+        padding:2rem;
+        border-bottom: 2px solid $azul;
+        margin-bottom:3rem;
+    }
+    @include tablet {
+        width:70%;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:1rem;
+    }
+}
+.gg {
+    font-size:3rem;
+}
+.no-reserva {
+    color:$blanco;
+    font-size:3rem;
+}

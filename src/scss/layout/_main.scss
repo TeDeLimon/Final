@@ -1,0 +1,36 @@
+.contenedor__principal {
+    background-image:url("../img/1.jpg");
+    background-size:cover;
+    height: 500px;
+    min-height: 500px;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items:center;
+    color:$blanco;
+    font-weight: 700;
+    a {
+        color:$blanco;
+        text-transform:uppercase;
+        z-index: 3;
+    }
+    h1 {
+        text-transform:uppercase;
+        letter-spacing: .5rem;
+    }
+    p {
+        color:$blanco;
+    }
+}
+.descripcion {
+    h2 {
+        text-transform:uppercase;
+        font-weight:500;
+    }
+    width:90%;
+    margin:0 auto;
+}
+.grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}

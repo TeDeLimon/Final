@@ -1,0 +1,66 @@
+
+.boton-amarillo-block {
+    @include boton($amarillo, block);
+    width:100%;
+}
+.boton-amarillo {
+    @include boton($amarillo, inline-block);
+    z-index:3;
+    //border: 1px solid $negro;
+}
+a.boton-amarillo {
+    @include boton($amarillo, inline-block);
+    z-index:3;
+    appearance: none;
+    color:$negro;
+    text-transform:uppercase;
+    //border: 1px solid $negro;
+}
+.boton-blanco {
+    @include boton(transparent, inline-block);
+    border: 5px solid $blanco;
+}
+.boton-blanco-negro {
+    @include boton($blanco, inline-block);
+    border: 3px solid $negro;
+}
+.boton-negro {
+    @include boton($negro, inline-block);
+    border: 3px solid $blanco;
+    text-transform: uppercase;
+    width:30rem;
+    appearance: none;
+    color:$blanco;
+}
+.boton-azul-block {
+    @include boton($azul, block);
+    max-width:50%;
+    min-width:30%;
+    margin:0 auto;
+    text-transform: uppercase;
+    padding:2rem;
+    font-size:1.5rem;
+}
+.boton-eliminar {
+    @include boton($rojo, block);
+    color:$blanco;
+    width:15rem;
+    height:5rem;
+}
+.boton-reserva {
+    @include boton($verde, block);
+    color:$blanco;
+    width:15rem;
+    height:5rem;
+}
+// #boton-menos {
+//     @include boton($rojo, block);
+//     color:$blanco;
+//     height:5rem;
+// }
+// #boton-mas {
+//     @include boton($verde, block);
+//     color:$blanco;
+//     height:5rem;
+// }
+

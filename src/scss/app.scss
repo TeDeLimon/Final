@@ -1,0 +1,20 @@
+/*** Base ***/
+@import 'base/variables.scss';
+@import 'base/utilidades.scss';
+@import 'base/mixins.scss';
+@import 'base/globales.scss';
+@import 'base/botones.scss';
+
+
+/*** Internas ***/
+
+
+/*** Layout ***/
+@import 'layout/login.scss';
+@import 'layout/header.scss';
+@import 'layout/footer.scss';
+@import 'layout/main.scss';
+@import 'layout/mesas.scss';
+@import 'layout/reservas.scss';
+@import 'layout/carta.scss';
+@import 'layout/carrito.scss';

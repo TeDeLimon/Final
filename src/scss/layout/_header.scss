@@ -1,0 +1,84 @@
+.header {
+    width:100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    min-height: 12rem;
+}
+.navegacion {
+    background-color:transparent;
+    display:block;
+    position:relative;
+    text-align:center;
+    a {
+        display:block;
+        appearance:none;
+        padding:1rem;
+        color:$negro;
+        cursor:pointer;
+        font-size:1.2rem;
+        text-transform: uppercase;
+        font-weight:700;
+        margin:0 auto;
+        &.logo {
+            max-width:12rem;
+            min-width:8rem;
+        }
+    }
+    #menu {
+        position:absolute;
+        left:2rem;
+        top:3rem;
+        .barras {
+            max-width:4rem;
+            min-width:4rem;
+            display:block;
+            filter:invert(70%);
+            &:hover {
+                filter:invert(20%);
+            }
+        }
+    }
+    .user {
+        position:absolute;
+        right:2rem;
+        top:3rem;
+        max-width:4rem;
+        min-width:4rem;
+        display:block;
+        &:hover {
+            filter:invert(20%);
+        } 
+    }
+}
+
+.activo {
+    display:none;
+}
+
+#mobile-menu {
+    appearance: none;
+    list-style-type:none;
+    width:100%;
+    text-align:center;
+    padding:1rem;
+    padding-top:0;
+    margin:0;
+    a {
+        text-decoration:none;
+        display:block;
+        appearance:none;
+        padding:1rem;
+        color:$negro;
+        cursor:pointer;
+        font-size:1.2rem;
+        text-transform: uppercase;
+        font-weight:700;
+        &.logo {
+            max-width:15rem;
+            min-width:8rem;
+        }
+        &:hover {
+            color:$amarillo;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+.carta {
+    background-image:url("../img/hero.jpg");
+    background-size:cover;
+    height: 500px;
+    min-height: 500px;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items:center;
+    color:$negro;
+    font-weight: 700;
+    a {
+        color:$negro;
+        text-transform:uppercase;
+        z-index: 3;
+    }
+    h1 {
+        text-transform:uppercase;
+        letter-spacing: .5rem;
+    }
+    p {
+        color:$negro;
+    }
+}
+.descripcion {
+    h2 {
+        text-transform:uppercase;
+        font-weight:500;
+    }
+    width:90%;
+    margin:0 auto;
+}
+.grid-carta {
+    display:flex;
+    flex-wrap:wrap;
+    .banner {
+        width:100%;
+        height: 400px;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        background-position:center;
+        .descripcion {
+             font-size:2rem;
+        }
+        p {
+            font-weight:500;
+            font-size:3.5rem;
+        }
+        .precio {
+            display:block;
+            font-size:2.5rem
+        }
+    }
+    .banner:nth-child(1) {
+        background-image: url('../img/guacamole-salad.jpg');
+    }
+    .banner:nth-child(3) {
+        background-image: url('../img/ceviche.jpg');
+    }
+    .banner:nth-child(5) {
+        background-image: url('../img/solomillo-parrilla.jpg');
+    }
+    .banner:nth-child(7) {
+        background-image: url('../img/medallon-cerdo.jpg');
+    }
+    .banner:nth-child(9) {
+        background-image: url('../img/lubina-chilena.jpg');
+    }
+    .banner:nth-child(11) {
+        background-image: url('../img/creme-brulee.jpg');
+    }
+    .banner:nth-child(13) {
+        background-image: url('../img/pastel-chocolate-fresa.jpg');
+    }
+    @include tablet {
+        display:flex;
+        .banner {
+            width:50%;
+            display:flex;
+            background-position: center center;
+            background-size: cover;
+            flex-direction: column;
+            text-align: center;
+        }
+        .banner:nth-child(1) {
+            order:2;
+        }
+        .banner:nth-child(2) {
+            order:1;
+        }
+        .banner:nth-child(3) {
+            order:3;
+        }
+        .banner:nth-child(4) {
+            order:4;
+        }
+        .banner:nth-child(5) {
+            order:6;
+        }
+        .banner:nth-child(6){
+            order:5;
+        }
+        .banner:nth-child(7) {
+            order:7;
+        }
+        .banner:nth-child(8){
+            order:8;
+        }
+        .banner:nth-child(9) {
+            order:10;
+        }
+        .banner:nth-child(10) {
+            order:9;
+        }
+        .banner:nth-child(11) {
+            order:11;
+        }
+        .banner:nth-child(12) {
+            order:12;
+        }
+        .banner:nth-child(13) {
+            order:14;
+        }
+        .banner:nth-child(14) {
+            order:13;
+        }
+        
+    }
+}
+.carta-completa {
+    padding:2rem;
+    font-size:4rem;
+    margin:0 auto;
+    margin-bottom:0;
+    width:100%;
+    
+}
+.menu-completo {
+    text-align:left;
+    padding:1rem;
+    h2 {
+        color:$amarillo;
+        font-size:4rem;
+    }
+    @include tablet {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:2rem;
+    }
+    .tipo-plato {
+        padding:1.5rem;
+        .nombre-precio {
+            p{  
+                font-weight:600;
+                font-size:2.5rem;
+            }
+            p:nth-child(2) {
+                font-weight:400;
+                font-size:2rem;
+            }
+            
+        }
+        .descripcion-plato {
+            font-weight:400;
+                font-size:2rem;
+        }
+    }
+    @include tablet {
+        .tipo-plato {
+            padding:1rem;
+            .nombre-precio {
+                display:flex;
+                justify-content:space-between;
+            }
+        }
+    }
+}
