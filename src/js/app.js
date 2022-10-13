@@ -76,7 +76,7 @@ async function nuevoServicio(fecha, hora) {
     // console.log([...datos]);
     //Petición hacia la API
     try {
-        const url = 'http://localhost:300/api/mesas';
+        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
 
         const respuesta = await fetch(url, { 
             method: 'POST',
@@ -152,7 +152,7 @@ async function guardarCita() {
         datosCita.append('hora',cita.hora);
         datosCita.append('comentarios',cita.comentarios);
         try {
-            const url = 'http://localhost:300/api/guardar';
+            const url = 'https://lit-escarpment-69425.herokuapp.com/api/guardar';
     
             const respuesta = await fetch(url, { 
                 method: 'POST',
@@ -167,7 +167,7 @@ async function guardarCita() {
                  showConfirmButton: false,
                  timer: 2500
                  }).then( () => {
-                    window.location.replace("http://localhost:300/bookings");
+                    window.location.replace("https://lit-escarpment-69425.herokuapp.com/bookings");
                  });
              }
         } catch (error) {
