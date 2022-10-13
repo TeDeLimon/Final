@@ -147,3 +147,4 @@
         </div>
     </div>
 </main>
+<div id="idReserva"><?php echo $idReserva;?></div>

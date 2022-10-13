@@ -7,11 +7,11 @@ use Model\Platos;
 
 class ComandaController {
     public static function index(Router $router) {
-        debuggear($_POST);
-        exit;
+        $idReserva = $_POST["id_reserva"];
         $platos = Platos::all();
         $router->render('comandas/index', [
-            'platos' => $platos
+            'platos' => $platos,
+            'idReserva' => $idReserva
         ]);
     }
 }

@@ -1,12 +1,15 @@
 let patron = new RegExp('^[0-9]$');
 let idPlato;
 let carrito = [];
+
 document.addEventListener('DOMContentLoaded', function() { 
     botonMas();
     botonMenos();
     botonesComanda();
     botonesCantidad();
     seleccionarTipo(); //Seleccionamos los divs con los tipos de platos
+    const idSesion = document.querySelector('#idReserva').innerText;
+    console.log(idSesion);
 });
 function seleccionarTipo() {
     const tipos = document.querySelectorAll('.tipo-plato');

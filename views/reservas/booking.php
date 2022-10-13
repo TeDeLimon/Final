@@ -13,7 +13,7 @@
                             <div>Comentarios: <span><?php echo $reserva->comentarios; ?></span></div>
                             <div class="acciones">
                                 <form method="POST" action="/comanda">
-                                    <input type="hidden" name="id_sesion" value="<?php echo $reserva->id; ?>">
+                                    <input type="hidden" name="id_reserva" value="<?php echo $reserva->id; ?>">
                                     <input class="boton-reserva" type="submit" value="¡A comer!">
                                 </form>
                                 <div class="eliminar">
