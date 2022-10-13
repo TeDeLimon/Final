@@ -1,4 +1,3 @@
-<?php debuggear($_SERVER); ?>
 <?php include '../includes/templates/header.php'; ?>
 
 <div class="centrado"><?php echo $contenido; ?></div>

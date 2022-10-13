@@ -18,14 +18,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `proyecto_final`
---
-DROP DATABASE IF EXISTS `proyecto_final`;
-CREATE DATABASE IF NOT EXISTS `proyecto_final` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci;
-USE `proyecto_final`;
-
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `clientes`
 --
