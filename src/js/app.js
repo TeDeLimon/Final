@@ -29,7 +29,7 @@ function usuario() {
 }
 async function consultarAPI() { //Dado que no sabemos el tiempo que demora la consulta debemos usar una función asíncrona
     try {
-        const url = 'http://localhost:300/api/mesas';
+        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
         const resultado = await fetch(url); //Esperamos el resultado
         const servicios = await resultado.json();
         await mostrarServicios(servicios);
