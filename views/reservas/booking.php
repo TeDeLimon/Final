@@ -12,7 +12,10 @@
                             <div>Estado: <span><?php echo $reserva->estado; ?></span></div>
                             <div>Comentarios: <span><?php echo $reserva->comentarios; ?></span></div>
                             <div class="acciones">
-                                <a class="boton-reserva" href="/comanda?reserva=<?php echo $reserva->id;?>">¡A comer!</a>
+                                <form method="POST" action="/comanda">
+                                    <input type="hidden" name="id_sesion" value="<?php echo $reserva->id; ?>">
+                                    <input class="boton-reserva" type="submit" value="¡A comer!">
+                                </form>
                                 <div class="eliminar">
                                     <form action="/api/eliminar" method="POST" class="w-100">
                                         <input type="hidden" name="clientes_id" value="<?php echo $reserva->clientes_id; ?>">

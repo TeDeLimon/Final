@@ -25,7 +25,7 @@ $router->post('/bookings',[ClientesController::class,'bookings']);
 $router->get('/carta',[CartaController::class,'index']);
 
 //UI de Comandas
-$router->get('/comanda?',[ComandaController::class,'index']);
+$router->get('/comanda',[ComandaController::class,'index']);
 $router->post('/comanda',[ComandaController::class,'index']);
 
 //ENDPOINTs de la API
