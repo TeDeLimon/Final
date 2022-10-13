@@ -21,10 +21,10 @@
 
 <script src="build/js/form.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<?php if($_SERVER["PATH_INFO"] == '/reservas'):?>
+<?php if($_SERVER["REQUEST_URI"] == '/reservas'):?>
     <script src="build/js/app.js"></script>
 <?php endif; ?>
-<?php if($_SERVER["PATH_INFO"] == '/comanda'):?>
+<?php if($_SERVER["REQUEST_URI"] == '/comanda'):?>
     <script src="build/js/comanda.js"></script>
 <?php endif; ?>
 </body>
