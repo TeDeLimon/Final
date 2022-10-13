@@ -18,7 +18,7 @@ class Router {
         //Arreglo de rutas protegidas
         $rutas_protegidas = ['/reservas'];
 
-        $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+        $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING'];
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         //Proteger las rutas, busca la ruta actual en las rutas protegidas
