@@ -1,5 +1,5 @@
 <main class="reservas">
-    <p class="nombre-usuario">Bienvenido <span><?php echo utf8_encode($_SESSION['nombre']." ".$_SESSION['apellidos']);?></span></p>
+    <p class="nombre-usuario">Bienvenido <span><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos'];?></span></p>
         <h1>Administrador de tus reservas</h1>
         <ul class="reserva">
             <?php 
