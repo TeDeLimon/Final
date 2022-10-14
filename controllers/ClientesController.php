@@ -78,7 +78,7 @@ class ClientesController {
         $id = $_SESSION['id'];
         $query = "SELECT * FROM reservas WHERE clientes_id =  '$id' AND estado = 'reservada' ORDER BY fecha ASC";
         $reservas = ReservasMesas::SQL($query);
-        $router->render('reservas/bookings',[
+        $router->render('reservas/booking',[
             'reservas' => $reservas
         ]);
     }

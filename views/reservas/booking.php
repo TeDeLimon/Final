@@ -33,8 +33,8 @@
                 } else { ?>
                     <p class="no-reserva">Actualmente no tienes ningún reserva realizada.</p>
                     <div><a class="boton-negro" href="/reservas"/>¿Por qué no te unes y reservas una mesa?</a></div>
-                <?php   }   ?>
-                
-    </ul>
+                <?php   }   
+            ?>
+        </ul>
 </main>
 <p class="gg">¡Recuerda disfrutar y pasarlo bien!</p>
