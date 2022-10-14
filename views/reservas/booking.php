@@ -10,8 +10,9 @@
                             <div>Hora: <span><?php echo $reserva->hora; ?></span></div>
                             <div>Comensales: <span><?php echo $reserva->comensales; ?></span></div>
                             <div>Estado: <span><?php echo $reserva->estado; ?></span></div>
+                            <div>Comentarios: <span><?php echo iconv('ASCII', 'UTF-8', $reserva->comentarios); ?></span></div>
                             <div>Comentarios: <span><?php echo iconv('ASCII', 'UTF-8//IGNORE', $reserva->comentarios); ?></span></div>
-                            <div>Comentarios: <span><?php echo utf8_encode($reserva->comentarios); ?></span></div>
+                            <div>Comentarios: <span><?php echo utf8_decode($reserva->comentarios); ?></span></div>
                             <div class="acciones">
                                 <form method="POST" action="/comanda">
                                     <input type="hidden" name="id_reserva" value="<?php echo $reserva->id; ?>">
