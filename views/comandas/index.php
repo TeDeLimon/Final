@@ -114,7 +114,7 @@
                                     </p>
                                 </div>
                                 <div class="plato-descripcion" data-descripcion-plato="<?php echo $plato->id;?>">
-                                    <?php echo utf8_decode($plato->descripcion); ?>
+                                    <?php echo utf8_encode($plato->descripcion); ?>
                                 </div>
                             </div>
                             <div class="acciones">
