@@ -6,7 +6,6 @@ use MVC\Router;
 use Model\Mesas;
 use Model\Clientes;
 use Model\ReservasMesas;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class ClientesController {
 
@@ -25,24 +24,9 @@ class ClientesController {
             $cliente = new Clientes($args);
             $errores = $cliente->validar();
             if (empty($errores)) {
-                if(!empty($_FILES['login']['tmp_name']['ruta'])) {
-                     //Genera un nombre único
-                    $nombreImagen =md5(uniqid(rand(), true)) . '.jpg';
-                    //Establecemos la imagen 
-                    //Realiza un resize a la imagen con IntervetionImage
-                    $image = Image::make($_FILES['login']['tmp_name']['ruta'])->fit(800,600); //Aplica un efecto de resize y recorte
-                    $cliente->setImagen($nombreImagen);
-                    //Crear la carpeta para subir imagenes
-                    if(!is_dir(CARPETA_IMAGENES)) {
-                        mkdir(CARPETA_IMAGENES);
-                    }
-                    //Guardar la imagen en el servidor
-                    $image->save(CARPETA_IMAGENES.'/'.$nombreImagen);
-                    //Guarda en la base de datos
-                }
                 $resultado = $cliente->guardar();
                 if($resultado) {
-                    header('Location: /?mensaje=1');
+                    header('Location: /');
                 }
             }
         }
@@ -101,7 +85,7 @@ class ClientesController {
             if(validarTipoContenido($_POST['tipo'])) {
                 $cliente = Clientes::findJoin($id);
                 $cliente->eliminar();
-                header('Location: /?mensaje=3');
+                header('Location: /');
             }
         }
     }

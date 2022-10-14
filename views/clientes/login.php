@@ -21,10 +21,6 @@
             </label>
             <input type="phone" name="login[telefono]" required autocomplete="off" placeholder="Tu número..."/>
             <label>
-                Imagen Usuario<span>(opcional)</span>
-            </label>
-            <input type="file" name="login[ruta]"/>
-            <label>
                 Contraseña<span>*</span>
             </label>
             <input type="password" name="login[password]" required autocomplete="off" placeholder="Tu contraseña..."/>
