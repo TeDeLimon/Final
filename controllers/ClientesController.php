@@ -51,7 +51,7 @@ class ClientesController {
                     $_SESSION['id'] = $cliente->id;
                     $_SESSION['nombre'] = $cliente->nombre;
                     $_SESSION['apellidos'] = $cliente->apellidos;
-                    header("Location: /booking");
+                    header("Location: /bookings");
                 }
                 else $errores[] = "Contraseña incorrecta";
             }
