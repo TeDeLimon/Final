@@ -17,14 +17,14 @@
                                 <div class="foto-plato"><img data-ruta-plato="<?php echo $plato->id;?>" src="build/img/<?php echo $plato->ruta;?>"></div>
                                 <div class="plato-nombre-precio">
                                     <p class="plato-nombre" data-nombre-plato="<?php echo $plato->id;?>">
-                                        <?php echo utf8_encode($plato->nombre); ?>
+                                        <?php echo $plato->nombre; ?>
                                     </p>
                                     <p class="plato-precio" data-precio-plato="<?php echo $plato->id;?>">
                                         <?php echo $plato->precio; ?>€
                                     </p>
                                 </div>
                                 <div class="plato-descripcion" data-descripcion-plato="<?php echo $plato->id;?>">
-                                    <?php echo utf8_encode($plato->descripcion); ?>
+                                    <?php echo $plato->descripcion; ?>
                                 </div>
                             </div>
                             <div class="acciones">
@@ -47,14 +47,14 @@
                                 <div class="foto-plato"><img data-ruta-plato="<?php echo $plato->id;?>" src="build/img/<?php echo $plato->ruta;?>"></div>
                                 <div class="plato-nombre-precio">
                                     <p class="plato-nombre" data-nombre-plato="<?php echo $plato->id;?>">
-                                        <?php echo utf8_encode($plato->nombre); ?>
+                                        <?php echo $plato->nombre; ?>
                                     </p>
                                     <p class="plato-precio" data-precio-plato="<?php echo $plato->id;?>">
                                         <?php echo $plato->precio; ?>€
                                     </p>
                                 </div>
                                 <div class="plato-descripcion" data-descripcion-plato="<?php echo $plato->id;?>">
-                                    <?php echo utf8_encode($plato->descripcion); ?>
+                                    <?php echo $plato->descripcion; ?>
                                 </div>
                             </div>
                             <div class="acciones">
@@ -77,14 +77,14 @@
                                 <div class="foto-plato"><img data-ruta-plato="<?php echo $plato->id;?>" src="build/img/<?php echo $plato->ruta;?>"></div>
                                 <div class="plato-nombre-precio">
                                     <p class="plato-nombre" data-nombre-plato="<?php echo $plato->id;?>">
-                                        <?php echo utf8_encode($plato->nombre); ?>
+                                        <?php echo $plato->nombre; ?>
                                     </p>
                                     <p class="plato-precio" data-precio-plato="<?php echo $plato->id;?>">
                                         <?php echo $plato->precio; ?>€
                                     </p>
                                 </div>
                                 <div class="plato-descripcion" data-descripcion-plato="<?php echo $plato->id;?>">
-                                    <?php echo utf8_encode($plato->descripcion); ?>
+                                    <?php echo $plato->descripcion; ?>
                                 </div>
                             </div>
                             <div class="acciones">
@@ -107,14 +107,14 @@
                                 <div class="foto-plato"><img data-ruta-plato="<?php echo $plato->id;?>" src="build/img/<?php echo $plato->ruta;?>"></div>
                                 <div class="plato-nombre-precio">
                                     <p class="plato-nombre" data-nombre-plato="<?php echo $plato->id;?>">
-                                        <?php echo utf8_encode($plato->nombre); ?>
+                                        <?php echo $plato->nombre; ?>
                                     </p>
                                     <p class="plato-precio" data-precio-plato="<?php echo $plato->id;?>">
                                         <?php echo $plato->precio; ?>€
                                     </p>
                                 </div>
                                 <div class="plato-descripcion" data-descripcion-plato="<?php echo $plato->id;?>">
-                                    <?php echo mb_convert_encoding($plato->descripcion); ?>
+                                    <?php echo $plato->descripcion; ?>
                                 </div>
                             </div>
                             <div class="acciones">
