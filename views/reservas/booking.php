@@ -1,5 +1,5 @@
 <main class="reservas">
-    <p class="nombre-usuario">Bienvenido <span><?php echo $_SESSION['nombre']." ".$_SESSION['apellidos'];?></span></p>
+    <p class="nombre-usuario">Bienvenido <span><?php echo utf8_encode($_SESSION['nombre']." ".$_SESSION['apellidos']);?></span></p>
         <h1>Administrador de tus reservas</h1>
         <ul class="reserva">
             <?php 
@@ -10,7 +10,7 @@
                             <div>Hora: <span><?php echo $reserva->hora; ?></span></div>
                             <div>Comensales: <span><?php echo $reserva->comensales; ?></span></div>
                             <div>Estado: <span><?php echo $reserva->estado; ?></span></div>
-                            <div>Comentarios: <span><?php echo $reserva->comentarios; ?></span></div>
+                            <div>Comentarios: <span><?php echo utf8_encode($reserva->comentarios); ?></span></div>
                             <div class="acciones">
                                 <form method="POST" action="/comanda">
                                     <input type="hidden" name="id_reserva" value="<?php echo $reserva->id; ?>">

@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     botonesComanda();
     botonesCantidad();
     seleccionarTipo(); //Seleccionamos los divs con los tipos de platos
-    const idSesion = document.querySelector('#idReserva').innerText;
-    console.log(idSesion);
+    const idReserva = document.querySelector('#idReserva');
+    console.log(idReserva);
 });
 function seleccionarTipo() {
     const tipos = document.querySelectorAll('.tipo-plato');
