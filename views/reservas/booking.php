@@ -11,7 +11,6 @@
                             <div>Comensales: <span><?php echo $reserva->comensales; ?></span></div>
                             <div>Estado: <span><?php echo $reserva->estado; ?></span></div>
                             <div>Comentarios: <span><?php echo iconv('ASCII', 'UTF-8//IGNORE', $reserva->comentarios); ?></span></div>
-                            <div>Comentarios: <span><?php echo mb_convert_encoding($reserva->comentarios); ?></span></div>
                             <div>Comentarios: <span><?php echo utf8_encode($reserva->comentarios); ?></span></div>
                             <div class="acciones">
                                 <form method="POST" action="/comanda">
