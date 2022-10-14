@@ -1,4 +1,5 @@
 let paso = 1;
+let enlaceUsado = false;
 const cita = {
     idUsuario: '', //id del usuario que hace la reserva
     idMesa: '1', //número de la mesa
@@ -29,7 +30,7 @@ function usuario() {
 }
 async function consultarAPI() { //Dado que no sabemos el tiempo que demora la consulta debemos usar una función asíncrona
     try {
-        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
+        const url = 'http://localhost:300/api/mesas';
         const resultado = await fetch(url); //Esperamos el resultado
         const servicios = await resultado.json();
         await mostrarServicios(servicios);
@@ -76,7 +77,7 @@ async function nuevoServicio(fecha, hora) {
     // console.log([...datos]);
     //Petición hacia la API
     try {
-        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
+        const url = 'http://localhost:300/api/mesas';
 
         const respuesta = await fetch(url, { 
             method: 'POST',
@@ -143,16 +144,17 @@ async function guardarCita() {
     for(const [key, value] of Object.entries(cita)) {
         if(value == '') vacio = true;
     }
-    if(vacio == false) {
+    if(vacio == false && enlaceUsado == false) {
         const datosCita = new FormData();
         datosCita.append('clientes_id',cita.idUsuario);
         datosCita.append('mesas_id',cita.idMesa);
         datosCita.append('comensales',cita.comensales);
         datosCita.append('fecha',cita.fecha);
         datosCita.append('hora',cita.hora);
-        datosCita.append('comentarios',cita.comentarios);
+        datosCita.append('comentarios',htmlEntities(cita.comentarios));
+        enlaceUsado = true;
         try {
-            const url = 'https://lit-escarpment-69425.herokuapp.com/api/guardar';
+            const url = 'http://localhost:300/api/guardar';
     
             const respuesta = await fetch(url, { 
                 method: 'POST',
@@ -167,17 +169,20 @@ async function guardarCita() {
                  showConfirmButton: false,
                  timer: 2500
                  }).then( () => {
-                    window.location.replace("https://lit-escarpment-69425.herokuapp.com/bookings");
+                    window.location.replace("http://localhost:300/bookings");
                  });
              }
         } catch (error) {
             console.log('desde error');
         }
     } else {
-        Swal.fire('Por favor revisa que todos los campos estén completados');
+        Swal.fire('Por favor revisa que todos los campos estén completados o enlace ya usado');
     } 
 }
 
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 /*
 if(respuesta) {
             Swal.fire({
