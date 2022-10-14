@@ -45,8 +45,6 @@ class ClientesController {
         $errores = Clientes::getErrores();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if($cliente = Clientes::findPhone($_POST['user']['telefono'])) {
-                debuggear($cliente);
-                exit;
                 if($_POST['user']['password'] == $cliente->password)  {
                     // start a session
                     $_SESSION['logged'] = true;
@@ -58,8 +56,6 @@ class ClientesController {
                 else $errores[] = "Contraseña incorrecta";
             }
             else $errores[] = "Usuario desconocido";
-            debuggear($cliente);
-                exit;
         }
         $router->render('clientes/user',[
             'errores' => $errores,
@@ -82,7 +78,7 @@ class ClientesController {
         $id = $_SESSION['id'];
         $query = "SELECT * FROM reservas WHERE clientes_id =  '$id' AND estado = 'reservada' ORDER BY fecha ASC";
         $reservas = ReservasMesas::SQL($query);
-        $router->render('reservas/booking',[
+        $router->render('reservas/bookings',[
             'reservas' => $reservas
         ]);
     }

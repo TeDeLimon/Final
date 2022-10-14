@@ -92,6 +92,7 @@ class ActiveRecord {
         $query .= " ) VALUES ('"; 
         $query .= join("','", array_values($atributos));
         $query .= "')";
+        debuggear($query);
         $resultado = self::$db->query($query);
 
         $id = self::$db->insert_id;
@@ -174,7 +175,7 @@ class ActiveRecord {
     }
 
     public static function findPhone($telefono) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE telefono = ${telefono}";
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE telefono = '$telefono';";  
 
         $resultado = self::consultarSQL($query);
 
