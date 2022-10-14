@@ -26,7 +26,11 @@ class ClientesController {
             if (empty($errores)) {
                 $resultado = $cliente->guardar();
                 if($resultado) {
-                    header('Location: /');
+                    $_SESSION['logged'] = true;
+                    $_SESSION['id'] = $cliente->id;
+                    $_SESSION['nombre'] = $cliente->nombre;
+                    $_SESSION['apellidos'] = $cliente->apellidos;
+                    header('Location: /reservas');
                 }
             }
         }
@@ -47,7 +51,7 @@ class ClientesController {
                     $_SESSION['id'] = $cliente->id;
                     $_SESSION['nombre'] = $cliente->nombre;
                     $_SESSION['apellidos'] = $cliente->apellidos;
-                    header("Location: /reservas");
+                    header("Location: /booking");
                 }
                 else $errores[] = "Contraseña incorrecta";
             }
