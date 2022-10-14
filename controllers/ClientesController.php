@@ -45,6 +45,8 @@ class ClientesController {
         $errores = Clientes::getErrores();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if($cliente = Clientes::findPhone($_POST['user']['telefono'])) {
+                debuggear($cliente);
+                exit;
                 if($_POST['user']['password'] == $cliente->password)  {
                     // start a session
                     $_SESSION['logged'] = true;
@@ -56,6 +58,8 @@ class ClientesController {
                 else $errores[] = "Contraseña incorrecta";
             }
             else $errores[] = "Usuario desconocido";
+            debuggear($cliente);
+                exit;
         }
         $router->render('clientes/user',[
             'errores' => $errores,
