@@ -12,11 +12,13 @@
     width:100%;
     margin:0 auto;
     text-align:center;
-    background-color:$negro;
-    color:$blanco;
+    background-color:$blanco;
+    color:$negro;
     h1 {
         margin:0;
-        background-color: $azul;
+        background-color: $blanco;
+        border-top: 2px solid $amarillo;
+        border-bottom: 2px solid $amarillo;
     }
 }
 .reserva {
@@ -24,17 +26,17 @@
     margin:0 auto;
     list-style-type:none;
     .cita {
-        color:$azul;
+        color:$amarillo;
         font-size:2rem;
         span{
-            color:$blanco;
+            color:$negro;
         }
         .acciones {
             display:flex;
             justify-content: space-evenly;
         }
         padding:2rem;
-        border-bottom: 2px solid $azul;
+        border-bottom: 2px solid $amarillo;
         margin-bottom:3rem;
     }
     @include tablet {

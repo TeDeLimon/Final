@@ -37,4 +37,4 @@
             ?>
         </ul>
 </main>
-<p class="gg">¡Recuerda disfrutar y pasarlo bien!</p>
+<p class="gg">¡Disfruta y pásalo bien!</p>

@@ -18,5 +18,5 @@
 </div> <!-- /form -->
 
 <div class="contenedor">
-    <a class="enlace" href="/login">¿Aún no tienes cuenta? ¡Lo solucionamos ya!</a>
+    <a class="enlace" href="/login">¿Aún no tienes cuenta? ¡Regístrate!</a>
 </div>

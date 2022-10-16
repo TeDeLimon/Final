@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\Mesas;
 use Model\Platos;
+use Model\Clientes;
 use Model\ReservasMesas;
 
 class APIController {
@@ -26,6 +27,17 @@ class APIController {
         echo json_encode([
             'mesas' => $mesas
         ]);
+    }
+
+    public static function comprobarCita() {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $fecha = $_POST['fecha'];
+            $usuarioId = $_POST['clientes_id'];
+            $query = "SELECT * FROM reservas INNER JOIN clientes ON clientes.id = reservas.clientes_id WHERE fecha = '$fecha' AND clientes.id = '$usuarioId';";
+            $resultado = Clientes::SQL($query);
+            if(count($resultado) > 0) echo json_encode(['resultado' => $resultado = false]);
+            else echo json_encode(['resultado' => $resultado = true]);
+        }
     }
 
     public static function guardar() {

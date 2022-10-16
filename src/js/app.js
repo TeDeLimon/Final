@@ -1,3 +1,4 @@
+//https://lit-escarpment-69425.herokuapp.com/
 let paso = 1;
 let enlaceUsado = false;
 const cita = {
@@ -10,7 +11,6 @@ const cita = {
 };
 document.addEventListener('DOMContentLoaded', function() {
     usuario();
-
     fecha();
     comentarios();
     API();
@@ -151,6 +151,9 @@ function seleccionarServicio(servicio) {
     console.log(cita);
 }
 async function guardarCita() {
+
+    //Vamos a realizar una consulta y ver sí tiene guardada alguna cita para este día
+
     let vacio = false; //Recorremos el objeto para comprobar sí alguna propiedad está vacía
     for(const [key, value] of Object.entries(cita)) {
         if(value == '') vacio = true;
@@ -163,26 +166,51 @@ async function guardarCita() {
         datosCita.append('fecha',cita.fecha);
         datosCita.append('hora',cita.hora);
         datosCita.append('comentarios',htmlEntities(cita.comentarios));
-        enlaceUsado = true;
+        console.log([...datosCita]);
+
+        //Vamos a verificar que no existe una cita para ese usuario para el mismo día que se solicita
         try {
-            const url = 'https://lit-escarpment-69425.herokuapp.com/api/guardar';
-    
-            const respuesta = await fetch(url, { 
+            const url = 'https://lit-escarpment-69425.herokuapp.com/api/comprobar';
+            const respuestaServicio = await fetch(url, {
                 method: 'POST',
                 body: datosCita
-            }); //Hacemos el fetch hacia la url y debemos añadir el metodo POST como atributos
-            const status = await respuesta.json();
-            if(status.resultado) {
-                 Swal.fire({
-                 position: 'center',
-                 icon: 'success',
-                 title: 'Reserva confirmada',
-                 showConfirmButton: false,
-                 timer: 2500
-                 }).then( () => {
-                    window.location.replace("https://lit-escarpment-69425.herokuapp.com/bookings");
-                 });
-             }
+            });
+            const respuesta = await respuestaServicio.json();
+            if(respuesta.resultado == false) {
+                enlaceUsado == true;
+                Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Ya existe una reserva para ese día',
+                showConfirmButton: false,
+                timer: 2500
+                }).then( () => {
+                    window.location.replace("https://lit-escarpment-69425.herokuapp.com/reservas");
+                });
+            } else {
+                enlaceUsado = true;
+                try {
+                    const url = 'https://lit-escarpment-69425.herokuapp.com/api/guardar';
+                    const respuesta = await fetch(url, { 
+                        method: 'POST',
+                        body: datosCita
+                    }); //Hacemos el fetch hacia la url y debemos añadir el metodo POST como atributos
+                    const status = await respuesta.json();
+                    if(status.resultado) {
+                        Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Reserva confirmada',
+                        showConfirmButton: false,
+                        timer: 2500
+                        }).then( () => {
+                        window.location.replace("https://lit-escarpment-69425.herokuapp.com/bookings");
+                        });
+                    }
+                } catch (error) {
+                    console.log('desde error');
+                }
+            }
         } catch (error) {
             console.log('desde error');
         }

@@ -34,6 +34,7 @@ $router->post('/api/mesas',[APIController::class,'index']);
 $router->post('/api/guardar',[APIController::class,'guardar']);
 $router->post('/api/eliminar',[APIController::class,'eliminar']);
 $router->post('/api/platos',[APIController::class,'platos']);
+$router->post('/api/comprobar',[APIController::class,'comprobarCita']);
 
 
 
