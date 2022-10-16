@@ -17,6 +17,9 @@ class ActiveRecord {
     public static function setDB($database) {
         self::$db = $database;
     }
+    public static function lastId() {
+        return self::$db->insert_id;
+    }
 
     public static function getErrores() {
         return static::$errores;

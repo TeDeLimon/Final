@@ -5,6 +5,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Mesas;
 use Model\Clientes;
+use Model\ActiveRecord;
 use Model\ReservasMesas;
 
 class ClientesController {
@@ -16,18 +17,19 @@ class ClientesController {
     }
     
     public static function login(Router $router) {
-        $cliente = new Clientes();
+        $cliente = new Clientes($_POST);
         $errores = Clientes::getErrores();
         $mensaje = $_GET['mensaje'] ?? null;
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $args = $_POST['login'];
+            $args = $_POST;
             $cliente = new Clientes($args);
+
             $errores = $cliente->validar();
             if (empty($errores)) {
                 $resultado = $cliente->guardar();
                 if($resultado) {
                     $_SESSION['logged'] = true;
-                    $_SESSION['id'] = $cliente->id;
+                    $_SESSION['id'] = $cliente->lastId();
                     $_SESSION['nombre'] = $cliente->nombre;
                     $_SESSION['apellidos'] = $cliente->apellidos;
                     header('Location: /reservas');

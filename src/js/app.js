@@ -10,6 +10,8 @@ const cita = {
 };
 document.addEventListener('DOMContentLoaded', function() {
     usuario();
+
+    fecha();
     comentarios();
     API();
     buscarPorHoraFechaComensal()
@@ -37,6 +39,15 @@ async function consultarAPI() { //Dado que no sabemos el tiempo que demora la co
     } catch(error) {
         console.log(error);
     }
+}
+function fecha() {
+    const fechaInput = document.querySelector('#fecha');
+    fechaInput.addEventListener('input', function () {
+        if(fechaInput.value != '') {
+            const completar = document.querySelector('.completar');
+            completar.classList.remove('completar');
+        }
+    });
 }
 function buscarPorHoraFechaComensal() {
     const fechaInput = document.querySelector('#fecha');
