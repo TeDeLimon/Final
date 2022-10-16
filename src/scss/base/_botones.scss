@@ -25,10 +25,12 @@ a.boton-amarillo {
     border: 3px solid $negro;
 }
 .boton-negro {
-    @include boton($negro, inline-block);
+    @include boton($negro, block);
     border: 3px solid $blanco;
     text-transform: uppercase;
     width:30rem;
+    margin:0 auto;
+    text-align:center;
     appearance: none;
     color:$blanco;
 }

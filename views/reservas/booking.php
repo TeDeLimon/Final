@@ -31,10 +31,11 @@
                         </li>
                     <?php endforeach;
                 } else { ?>
-                    <p class="no-reserva">Actualmente no tienes ningún reserva realizada.</p>
-                    <div><a class="boton-negro" href="/reservas"/>¿Por qué no te unes y reservas una mesa?</a></div>
+        </ul>
+        <p class="no-reserva">Actualmente no tienes ningún reserva realizada.</p>
+        <div><a class="boton-negro" href="/reservas"/>¿Por qué no te unes y reservas una mesa?</a></div>
                 <?php   }   
             ?>
-        </ul>
+        
 </main>
 <p class="gg">¡Disfruta y pásalo bien!</p>
