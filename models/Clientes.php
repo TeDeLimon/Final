@@ -36,6 +36,8 @@ class Clientes extends ActiveRecord {
         if(!$this->email) self::$errores[] = 'El email es obligatorio';
         if(!$this->password) self::$errores[] = 'La contraseña es obligatoria';
         if(strlen($this->telefono) != 9) self::$errores[] = 'El telefono debe tener 9 dígitos';
+        if(!preg_match('/^[0-9]{9}$/',$this->telefono)) self::$errores[] = "El teléfono debe tener un formato válido";
+
         return self::$errores;
     }
 
