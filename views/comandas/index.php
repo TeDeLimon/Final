@@ -145,6 +145,12 @@
                 <p class="precio-total"></p>
             </div>
         </div>
+        <div class="cocina oculto">
+            <button class="boton-cocina" id="cocina">Enviar a Cocina</button>
+        </div>
+        <div class="pagar oculto">
+            <button class="boton-pagar" id="pagar">Pagar</button>
+        </div>
     </div>
 </main>
 <div id="idReserva"><?php echo $idReserva;?></div>

@@ -15,3 +15,9 @@ $fuente-secundaria: "Times-Roman", "serif";
 $telefono: 480px;
 $tablet: 768px;
 $desktop: 1200px;
+
+.fuego {
+    background: rgb(219,77,109);
+    background: linear-gradient(90deg, rgba(219,77,109,1) 0%, rgba(255,106,0,1) 6%, rgba(255,0,0,1) 12%, rgba(233,0,0,1) 18%, rgba(255,106,0,1) 25%, rgba(224,37,47,1) 32%, rgba(255,106,0,1) 40%, rgba(255,106,0,1) 47%, rgba(255,0,0,1) 54%, rgba(255,132,0,1) 61%, rgba(255,0,0,1) 68%, rgba(255,0,0,1) 73%, rgba(255,111,0,1) 79%, rgba(255,106,0,1) 86%, rgba(255,0,0,1) 91%, rgba(255,106,0,1) 94%, rgba(255,0,0,1) 100%);
+} 
+    

@@ -317,5 +317,9 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
+    public static function firstSQL($query) {
+        $resultado = self::consultarSQL($query);
+        return array_shift($resultado);
+    }
 
 }

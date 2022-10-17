@@ -35,6 +35,8 @@ $router->post('/api/guardar',[APIController::class,'guardar']);
 $router->post('/api/eliminar',[APIController::class,'eliminar']);
 $router->post('/api/platos',[APIController::class,'platos']);
 $router->post('/api/comprobar',[APIController::class,'comprobarCita']);
+$router->post('/api/comanda',[APIController::class,'comanda']);
+$router->get('/api/existeComanda',[APIController::class,'existeComanda']);
 
 
 

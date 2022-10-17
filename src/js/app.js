@@ -32,7 +32,7 @@ function usuario() {
 }
 async function consultarAPI() { //Dado que no sabemos el tiempo que demora la consulta debemos usar una función asíncrona
     try {
-        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
+        const url = 'http://localhost:300/api/mesas';
         const resultado = await fetch(url); //Esperamos el resultado
         const servicios = await resultado.json();
         await mostrarServicios(servicios);
@@ -88,7 +88,7 @@ async function nuevoServicio(fecha, hora) {
     // console.log([...datos]);
     //Petición hacia la API
     try {
-        const url = 'https://lit-escarpment-69425.herokuapp.com/api/mesas';
+        const url = 'http://localhost:300/api/mesas';
 
         const respuesta = await fetch(url, { 
             method: 'POST',
@@ -166,11 +166,10 @@ async function guardarCita() {
         datosCita.append('fecha',cita.fecha);
         datosCita.append('hora',cita.hora);
         datosCita.append('comentarios',htmlEntities(cita.comentarios));
-        console.log([...datosCita]);
 
         //Vamos a verificar que no existe una cita para ese usuario para el mismo día que se solicita
         try {
-            const url = 'https://lit-escarpment-69425.herokuapp.com/api/comprobar';
+            const url = 'http://localhost:300/api/comprobar';
             const respuestaServicio = await fetch(url, {
                 method: 'POST',
                 body: datosCita
@@ -185,12 +184,12 @@ async function guardarCita() {
                 showConfirmButton: false,
                 timer: 2500
                 }).then( () => {
-                    window.location.replace("https://lit-escarpment-69425.herokuapp.com/reservas");
+                    window.location.replace("http://localhost:300/reservas");
                 });
             } else {
                 enlaceUsado = true;
                 try {
-                    const url = 'https://lit-escarpment-69425.herokuapp.com/api/guardar';
+                    const url = 'http://localhost:300/api/guardar';
                     const respuesta = await fetch(url, { 
                         method: 'POST',
                         body: datosCita
@@ -204,7 +203,7 @@ async function guardarCita() {
                         showConfirmButton: false,
                         timer: 2500
                         }).then( () => {
-                        window.location.replace("https://lit-escarpment-69425.herokuapp.com/bookings");
+                        window.location.replace("http://localhost:300/bookings");
                         });
                     }
                 } catch (error) {

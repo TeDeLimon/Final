@@ -55,6 +55,22 @@ a.boton-amarillo {
     width:15rem;
     height:5rem;
 }
+.boton-pagar {
+    @include boton($verde, block);
+    width:80%;
+    margin: 0 auto;
+    text-align:center;
+    margin-bottom:2rem;
+
+}
+.boton-cocina {
+    @include boton($amarillo, block);
+    width:80%;
+    margin: 0 auto;
+    text-align:center;
+    margin-bottom:2rem;
+}
+
 // #boton-menos {
 //     @include boton($rojo, block);
 //     color:$blanco;

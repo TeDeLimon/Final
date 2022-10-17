@@ -10,6 +10,9 @@ class ComandaController {
         if(!isset($_SESSION['logged'])) {
             header('Location: /user');
         }
+        if(!isset($_POST['id_reserva'])) {
+            header('Location: /bookings');
+        }
         $idReserva = $_POST["id_reserva"];
         $platos = Platos::all();
         $router->render('comandas/index', [

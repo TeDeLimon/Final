@@ -1,4 +1,5 @@
 let patron = new RegExp('^[0-9]$');
+let idReserva;
 let idPlato;
 let carrito = [];
 
@@ -7,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     botonMenos();
     botonesComanda();
     botonesCantidad();
+    botonCocina();
     seleccionarTipo(); //Seleccionamos los divs con los tipos de platos
-    const idReserva = document.querySelector('#idReserva');
+    const id_Reserva = document.querySelector('#idReserva');
+    idReserva = id_Reserva.innerText;
     console.log(idReserva);
 });
 function seleccionarTipo() {
@@ -99,8 +102,6 @@ function agregarComanda(id) {
     }
 }
 function evaluarComanda(objeto) {
-    console.log('entrada',objeto);
-    console.log('entrada carrito',carrito);
     if(carrito.some( values => values.id == objeto.id)) {
         console.log('El objecto ya existe, actualizamos la cantidad');
         carrito.forEach( item => {
@@ -109,7 +110,6 @@ function evaluarComanda(objeto) {
             }
         });
     } else {
-        console.log('El objeto no existe, lo agregamos al carrito');
         carrito.push(objeto);
     }
     mostrarComanda();
@@ -185,9 +185,70 @@ function mostrarComanda() {
             divPrecioTotal.removeChild(divPrecioTotal.firstChild);
         }
         divPrecioTotal.textContent = totalPrecio + '€';
+    
+    //Por otra parte tenemos el código para mostrar los botones
+    const botonCocina = document.querySelector('.cocina');
+    if(carrito.length == 0) botonCocina.classList.add('oculto');
+    if(carrito.length > 0 ) botonCocina.classList.remove('oculto');
 }
 
 function botonEliminarPlato(id) {
     carrito = carrito.filter( targets => targets.id != id);
     mostrarComanda();
+}
+
+function botonCocina() {
+    const botonCocina = document.querySelector('.cocina');
+    botonCocina.addEventListener('click', function() {
+        enviarComanda(); 
+    });
+}
+async function enviarComanda() {
+    datos = new FormData();
+    datos.append('carrito', JSON.stringify(carrito));
+    datos.append('reserva',idReserva);
+    try {
+        const url = 'http://localhost:300/api/comanda';
+        const respuesta = await fetch(url, {
+            method: 'POST',
+            body: datos
+        });
+        const result = await respuesta.json();
+        if(result.resultado) {
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '¡Comanda enviada a cocina!',
+            showConfirmButton: false,
+            timer: 2500
+            }).then( () => {
+                botonPagar();
+                carrito = [];
+                mostrarComanda();
+            })
+        }
+    } catch (error) {
+        console.log('Desde error');
+    }
+}
+function botonPagar() {
+    const botonPagar = document.querySelector('.pagar');
+    const pagar = document.querySelector('#pagar');
+    botonPagar.classList.remove('oculto');
+    pagar.addEventListener('click', function() {
+        pagarComanda();
+    });
+}
+async function comprobarCarrito() {
+    try {
+        const url = 'http://localhost:300/api/existeComanda';
+        const respuesta = await fetch(url);
+        const result = await respuesta.json();
+        console.log(result);
+    } catch (error) {
+
+    }
+}
+async function pagarComanda() {
+
 }

@@ -66,4 +66,20 @@ class APIController {
         $platos = Platos::all();
         echo json_encode(['platos' => $platos]);
     }
+
+    public static function comanda() {
+        $carrito = json_decode($_POST['carrito']);
+        $idReserva = $_POST['reserva'];
+        $query = "SELECT mesas_id FROM reservas WHERE id = '$idReserva';";
+        $mesa = ReservasMesas::firstSQL($query);
+        foreach($carrito as $carrito) {
+            $query = "INSERT INTO comandas (platos_id, mesas_id, reservas_id, cantidad) VALUES ('$carrito->id', '$mesa->mesas_id','$idReserva','$carrito->cantidad');";
+            $resultado = ReservasMesas::guardarSQL($query);
+        }
+        echo json_encode(['resultado' => true]);        
+    }
+
+    public static function existeComanda() {
+        
+    }
 }
