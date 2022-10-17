@@ -149,8 +149,11 @@
             <button class="boton-cocina" id="cocina">Enviar a Cocina</button>
         </div>
         <div class="pagar oculto">
-            <button class="boton-pagar" id="pagar">Pagar</button>
+            <h2>Sin presiones, a tu ritmo.</h2>
+            <form action="/comandas" method="post">
+                <input type="hidden" name="reserva" id="idReserva" value="<?php echo $idReserva;?>">
+                <input type="submit" value="pagar" class="boton-pagar" id="pagar"/>
+            </form>
         </div>
     </div>
 </main>
-<div id="idReserva"><?php echo $idReserva;?></div>

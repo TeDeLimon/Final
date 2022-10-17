@@ -27,6 +27,7 @@ $router->get('/carta',[CartaController::class,'index']);
 //UI de Comandas
 $router->get('/comanda',[ComandaController::class,'index']);
 $router->post('/comanda',[ComandaController::class,'index']);
+$router->post('/comandas',[ComandaController::class,'comandas']);
 
 //ENDPOINTs de la API
 $router->get('/api/mesas',[APIController::class,'index']);
@@ -36,7 +37,7 @@ $router->post('/api/eliminar',[APIController::class,'eliminar']);
 $router->post('/api/platos',[APIController::class,'platos']);
 $router->post('/api/comprobar',[APIController::class,'comprobarCita']);
 $router->post('/api/comanda',[APIController::class,'comanda']);
-$router->get('/api/existeComanda',[APIController::class,'existeComanda']);
+$router->post('/api/existeComanda',[APIController::class,'existeComanda']);
 
 
 

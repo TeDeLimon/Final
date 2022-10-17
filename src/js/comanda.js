@@ -4,15 +4,16 @@ let idPlato;
 let carrito = [];
 
 document.addEventListener('DOMContentLoaded', function() { 
+    const id_Reserva = document.querySelector('#idReserva');
+    idReserva = id_Reserva.value;
+    console.log(idReserva);
+    comprobarCarrito();
     botonMas();
     botonMenos();
     botonesComanda();
     botonesCantidad();
     botonCocina();
     seleccionarTipo(); //Seleccionamos los divs con los tipos de platos
-    const id_Reserva = document.querySelector('#idReserva');
-    idReserva = id_Reserva.innerText;
-    console.log(idReserva);
 });
 function seleccionarTipo() {
     const tipos = document.querySelectorAll('.tipo-plato');
@@ -208,7 +209,7 @@ async function enviarComanda() {
     datos.append('carrito', JSON.stringify(carrito));
     datos.append('reserva',idReserva);
     try {
-        const url = 'http://localhost:300/api/comanda';
+        const url = 'https://lit-escarpment-69425.herokuapp.com/api/comanda';
         const respuesta = await fetch(url, {
             method: 'POST',
             body: datos
@@ -235,20 +236,19 @@ function botonPagar() {
     const botonPagar = document.querySelector('.pagar');
     const pagar = document.querySelector('#pagar');
     botonPagar.classList.remove('oculto');
-    pagar.addEventListener('click', function() {
-        pagarComanda();
-    });
 }
 async function comprobarCarrito() {
+    datosReserva = new FormData();
+    datosReserva.append('reserva',idReserva);
     try {
-        const url = 'http://localhost:300/api/existeComanda';
-        const respuesta = await fetch(url);
+        const url = 'https://lit-escarpment-69425.herokuapp.com/api/existeComanda';
+        const respuesta = await fetch(url, {
+            method: 'POST',
+            body: datosReserva
+        });
         const result = await respuesta.json();
-        console.log(result);
-    } catch (error) {
-
-    }
-}
-async function pagarComanda() {
-
+        if(result.resultado) {
+            botonPagar();
+        }
+    } catch (error) {   }
 }

@@ -5,6 +5,7 @@ namespace Controllers;
 use Model\Mesas;
 use Model\Platos;
 use Model\Clientes;
+use Model\Comandas;
 use Model\ReservasMesas;
 
 class APIController {
@@ -80,6 +81,10 @@ class APIController {
     }
 
     public static function existeComanda() {
-        
+        $idReserva = $_POST['reserva'];
+        $query = "SELECT * FROM comandas WHERE reservas_id = '$idReserva';";
+        $resultado = Comandas::SQL($query);
+        if(count($resultado) > 0) echo json_encode(['resultado' => true]);
+        else echo json_encode(['resultado' => false]);
     }
 }
