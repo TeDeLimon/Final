@@ -20,6 +20,7 @@ $router->get('/reservas',[ClientesController::class,'reservas']);
 $router->post('/reservas',[ClientesController::class,'reservas']);
 $router->get('/bookings',[ClientesController::class,'bookings']);
 $router->post('/bookings',[ClientesController::class,'bookings']);
+$router->get('/contacto',[ClientesController::class,'contacto']);
 
 //UI de Carta
 $router->get('/carta',[CartaController::class,'index']);

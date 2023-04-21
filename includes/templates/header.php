@@ -26,7 +26,7 @@
                 <li><a href="/bookings">Tus Reservas</a></li>
                 <li><a href="/reservas">Reservas</a></li>
                 <li><a href="/carta">Carta</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="/contacto">Nosotros</a></li>
             </ul>
         </nav>
     </header>

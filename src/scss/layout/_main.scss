@@ -34,3 +34,27 @@
     display:grid;
     grid-template-columns:1fr 1fr;
 }
+.contenedor__secundario {
+    background-image:url("../img/contacto.jpg");
+    background-size:cover;
+    height: 500px;
+    min-height: 500px;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items:center;
+    color:$negro;
+    font-weight: 700;
+    a {
+        color:$blanco;
+        text-transform:uppercase;
+        z-index: 3;
+    }
+    h1 {
+        text-transform:uppercase;
+        letter-spacing: .5rem;
+    }
+    p {
+        color:$blanco;
+    }
+}

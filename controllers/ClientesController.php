@@ -96,5 +96,10 @@ class ClientesController {
         }
     }
 
+    public static function contacto(Router $router) {
+        $router->render('formularios/contacto',[
+        ]);
+    }
+
 }
 
